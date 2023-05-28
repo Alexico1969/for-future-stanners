@@ -1,9 +1,9 @@
 /* styles.css */
 
 body {
-    background-color: #f0f0f0;
+    background-color: rgb(5,70,148);
     font-family: 'Lato', sans-serif;
-    color: #333;
+    color: #00205b;
     padding: 20px;
 }
 
@@ -27,7 +27,7 @@ main {
     text-align: center;
 }
 
-main button {
+main button, header button {
     background-color: #008CBA; 
     border: none;
     color: white;
@@ -67,7 +67,7 @@ footer input[type=text] {
 }
 
 footer input[type=submit] {
-    background-color: #4CAF50;
+    background-color: rgb(5,70,148);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -90,3 +90,13 @@ footer button {
 }
 
 
+.center{
+    text-align:center;
+    margin: auto;
+}
+
+.welcome-text{
+    margin: auto;
+    max-width: 500px;
+    font-size: 20px;
+}
