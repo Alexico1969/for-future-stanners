@@ -1,0 +1,4 @@
+Data Science: Important to make AI models operate. Some data is used to train the AI and some is used to test the AI. Every time we test the AI, we can make it better bymaking it go to the correct output we want it to go to(correct activation).
+Natural Language Processing (NLP) is concerned with systems that are able to perceive and understand spoken human language. It consists of sub tasks like speech recognition,natural language understanding, generation and translation. With multiple languages used across the globe, NLP systems could be a real changer.
+Deep Learning is a subdivision of Machine Learning that trains AI to operate like a human brain. Deep Learning can be used to create an infinite amount of layers ofprocessing data to achieve functionality similar to our brain.
+Current available AI tools: ChatGPT, DALLE*2, AgentRunnerAI, MidJourney etc.

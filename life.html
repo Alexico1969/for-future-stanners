@@ -29,15 +29,13 @@
   </header>
 
   <!-- Add main content -->
+  <!-- Add main content -->
   <main>
-    <!-- Add your page's main content here -->
-    <h3>Daniel Knox -</h3> 
-    <p>"Do your best and don't get lazy because the hard work will pay off."</p>
-    <h3>Lucky Inmenso -</h3>
-    <p>"Don't be scared to ask questions, the worse it can do is help you. And, keep your grades up consistently through your sophomore, junior AND senior year, this will prepare you for college with your good study habits, make you eligible for more scholarships, give you a better work ethic and more."</p>
-    <h3>Nicolas Dolengewicz -</h3>
-    <p></p>
-
+    <div id="card-container" class="card-container">
+      <div id="spinner" class="center">
+        <img class="center" src="img/Spinner-1s-200px.gif">
+      </div>
+    </div>
   </main>
 
   <!-- Add footer content -->
@@ -54,5 +52,75 @@
     </form>
     <button onclick="window.location.href = 'directory.html';">Back</button>
   </footer>
+
+
+  <script>
+    function changeText(card) {
+      var cardContent = card.querySelector('.card-content');
+      cardContent.textContent = 'secret';
+    }
+    function flipCard(card) {
+      card.classList.toggle('flipped');
+    }
+
+// Read the text file
+fetch('life_data.txt')
+  .then(response => response.text())
+  .then(data => {
+
+    // Remove the spinner animation
+    var element = document.getElementById('spinner');
+    if (element) {
+      element.remove();
+    } else {
+      console.log("Element not found");
+    }
+
+    // Split the text into lines
+    var lines = data.split('\n');
+
+    // Get the reference to the card container
+    var cardContainer = document.getElementById("card-container");
+
+    // Create the cards dynamically
+    lines.forEach((line, index) => {
+      // Create the outer card div
+      var cardDiv = document.createElement("div");
+      cardDiv.className = "card";
+      cardDiv.onclick = function () {
+        flipCard(this);
+      };
+
+      // Create the card content div
+      var cardContentDiv = document.createElement("div");
+      cardContentDiv.className = "card-content";
+
+      // Create the front div
+      var frontDiv = document.createElement("div");
+      frontDiv.className = "back";
+      frontDiv.textContent = line.trim(); // Set the card content from the file
+
+      // Create the back div
+      var backDiv = document.createElement("div");
+      backDiv.className = "front";
+      backDiv.textContent = "Click me !";
+
+      // Append the front and back divs to the card content div
+      cardContentDiv.appendChild(frontDiv);
+      cardContentDiv.appendChild(backDiv);
+
+      // Append the card content div to the card div
+      cardDiv.appendChild(cardContentDiv);
+
+      // Append the card div to the card container
+      cardContainer.appendChild(cardDiv);
+    });
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+
+  </script>
 </body>
 </html>
